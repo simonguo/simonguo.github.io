@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>郭小铭</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//t.hypers.com.cn/libs/rsuite/css/0.1.0/rsuite.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.10.3/babel.min.js"></script>
+<link href="index.css?697f01653a82a6df8a1e" rel="stylesheet"></head>
+
+<body>
+    <div id="root">
+        <style>
+            .rsuite-site-loading span{
+                font-size: 24px;
+            }
+        </style>
+        <div class="rsuite-site-loading"  >
+            <div id="loading-text">loading</div>
+        </div>
+        <script>
+            (function() {
+                var content = document.getElementById('loading-text');
+                content.innerHTML = content.innerHTML.split('').map(function(letter, i) {
+                    var className = '';
+                    if (i > 0 && i < content.innerText.length - 1) {
+                        className = 'rsuite-letter-' + (i % 6);
+                    }
+                    if (letter.trim() === '') {
+                        className += ' blank';
+                    }
+                    return '<span class="' + className + '">' + letter + '</span>';
+                }).join('');
+            })();
+        </script>
+    </div>
+    <script>
+        (function(i,d,t,o,u,h,s,f){i[t]=i[t]||[],i[t].push(h);i[h]=i[h]||function(){
+        return (i[h].q=i[h].q||[]).push(arguments)};s=d.createElement(o);s.src=u;
+        s.async=1;f=d.getElementsByTagName(o)[0];f.parentNode.insertBefore(s,f);
+        })(window,document,"HyperAnalyticsObject","script","//t.hypers.com.cn/hwt.js?v=1.6","_ha");
+        _ha("create","471");
+        _ha("send","pageview");
+    </script>
+<script type="text/javascript" src="babel.bundle.js?697f01653a82a6df8a1e"></script><script type="text/javascript" src="vendor.bundle.js?697f01653a82a6df8a1e"></script><script type="text/javascript" src="index.bundle.js?697f01653a82a6df8a1e"></script></body>
+
+</html>
