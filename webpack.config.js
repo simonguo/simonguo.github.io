@@ -25,7 +25,7 @@ var plugins = [
     new ExtractTextPlugin('[name].css'),
     new HtmlwebpackPlugin({
         title: '郭小铭',
-        filename: 'index.html',
+        filename: '../index.html',
         template: 'src/index.html',
         inject: true,
         hash: true
@@ -35,7 +35,7 @@ var plugins = [
 if (process.env.NODE_ENV === 'production') {
 
     plugins.push(new webpack.optimize.CommonsChunkPlugin({
-        names: ['vendor','babel']
+        names: ['vendor']
     }));
 
     plugins.push(new webpack.optimize.UglifyJsPlugin({

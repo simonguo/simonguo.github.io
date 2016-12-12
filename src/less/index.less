@@ -5,9 +5,18 @@
 body{
     font-family: Helvetica,Arial,sans-serif;
 }
-
+body{
+    background: @bg-color;
+}
+a{
+    color: green;
+    &:hover{
+        color: red;
+    }
+}
 .app-container{
     padding: 18px;
+    color:#fff;
 }
 
 .logo{
@@ -78,12 +87,13 @@ code{
 }
 
 .typing-wrapper{
-    .box-shadow();
-    position: fixed;
     top: 0;
-    width: 50%;
     height: 100%;
     overflow: auto;
+    position: fixed;
+    width: 100%;
+    opacity: 0.1;
+    left: 0;
 }
 
 .clearfix() {
@@ -120,7 +130,7 @@ ul{
     .item{ 
         float: left;
         padding: 10px 16px;
-        background: #f5f5f5;
+        background: #30353c;
         margin: 0 10px 10px  0; 
     }
     h2{ 
@@ -130,5 +140,9 @@ ul{
 }
 
 .cm-s-base16-dark.CodeMirror {
-    background: #373c44;
+    background: #292d33;
+}
+
+.profile{
+    padding: 20px;
 }

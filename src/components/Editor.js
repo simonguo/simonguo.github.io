@@ -11,6 +11,8 @@ import 'codemirror/mode/jsx/jsx';
 import * as RForm  from 'rsuite-form';
 import * as Schema from 'rsuite-schema';
 
+
+
 const RSuiteForm = RForm.Form;
 const Field = RForm.Field;
 const SchemaModel = Schema.SchemaModel;
@@ -70,6 +72,8 @@ const PanelGroup = require('rsuite/lib/PanelGroup').default;
 
 
 const Anchor = require('rsuite/lib/Anchor').default;
+
+const Typist = require('react-typist').default;
 
 
 
@@ -133,12 +137,7 @@ const Editor = React.createClass({
 
         return (
             <Row>
-                <Col md={6} >
-                    <div>
-                        {this.renderExample() }
-                    </div>
-                </Col>
-                <Col md={6} xsHidden>
+                <Col md={12} >
                     <div className="typing-wrapper">
                         <CodeEditor
                             key='jsx'
@@ -149,6 +148,12 @@ const Editor = React.createClass({
                             />
                     </div>
                 </Col>
+                <Col md={12} >
+                    <div>
+                        {this.renderExample() }
+                    </div>
+                </Col>
+                
             </Row>
         );
 
