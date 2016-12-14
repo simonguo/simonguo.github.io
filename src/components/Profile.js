@@ -13,9 +13,11 @@ const Item = ({ children, href } = props) => (
 
 const instance = (
     <div className="profile">
-        <Typist>
-        
-            <h1>郭小铭</h1>
+        <Typist
+            cursor={{ show: false }}
+            >
+
+            <h2>郭小铭</h2>
             <Section className="vcard-details">
                 <Item href="http://www.hypers.com"><IconFont icon="group" /> Hypers</Item>
                 <Item href="https://github.com/simonguo"><IconFont icon="github-alt" /> simonguo</Item>

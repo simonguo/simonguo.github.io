@@ -8,16 +8,6 @@ import 'codemirror/mode/javascript/javascript';
 import 'codemirror/addon/runmode/runmode';
 import 'codemirror/mode/jsx/jsx';
 
-import * as RForm  from 'rsuite-form';
-import * as Schema from 'rsuite-schema';
-
-
-
-const RSuiteForm = RForm.Form;
-const Field = RForm.Field;
-const SchemaModel = Schema.SchemaModel;
-const StringType = Schema.StringType;
-const ArrayType = Schema.ArrayType;
 
 // Buttons
 const Button = require('rsuite/lib/Button').default;
@@ -72,9 +62,7 @@ const PanelGroup = require('rsuite/lib/PanelGroup').default;
 
 
 const Anchor = require('rsuite/lib/Anchor').default;
-
 const Typist = require('react-typist').default;
-
 
 
 const Editor = React.createClass({
