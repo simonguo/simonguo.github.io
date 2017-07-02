@@ -141,7 +141,7 @@ const Editor = React.createClass({
                         {this.renderExample() }
                     </div>
                 </Col>
-                
+
             </Row>
         );
 
