@@ -26,7 +26,7 @@ const instance = (
     </h2>
 
     <Section className="vcard-details">
-      <Item href="http://www.hypers.com"><IconFont icon="group" /> Hypers</Item>
+      <Item href="http://www.hypers.com"><IconFont icon="group" /> HYPERS Inc.</Item>
       <Item href="https://github.com/simonguo"><IconFont icon="github-alt" /> simonguo</Item>
       <Item href="mailto:simonguo.2009@gmail.com"><IconFont icon="envelope-o" /> simonguo.2009@gmail.com</Item>
       <Item><IconFont icon="weixin" /> simonet</Item>
@@ -41,7 +41,7 @@ const instance = (
       <Item href="https://github.com/hypers/JiraAgileApp">Jira Agile</Item>
     </Section>
 
-    <Section title="Skills" className="list skills">
+    <Section title="Skills & Tags" className="list skills">
       <Item skill={10}>React</Item>
       <Item skill={7}>React Native</Item>
       <Item skill={10}>Redux</Item>
@@ -70,13 +70,13 @@ const instance = (
 
     </Section>
 
-    <Section title="Links" className="list">
+    <Section title="Friend Links" className="list">
       <Item href="http://www.5kun.com/">5KUN DESIGN</Item>
       <Item href="http://www.bogoor.com/">博格设计</Item>
       <Item href="http://www.smohan.net/">水墨寒的博客</Item>
       <Item href="http://www.wduw.com/">老岩的布拉格</Item>
       <Item href="http://byameato.sxl.cn/">By Ameato</Item>
-      <Item href="http://www.hypers.com/">HYPERS</Item>
+      <Item href="http://blog.hypers.io/">HYPERS 前端团队博客</Item>
     </Section>
   </div>
 );
