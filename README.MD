@@ -1,5 +1,3 @@
-# 郭小铭 🐶
-
 Front End Developer & Leader at [HYPERS](https://www.hypers.com), Creator of [@rsuite](https://github.com/rsuite/rsuite)
 
 * Group: [HYPERS Inc.](https://hypers.com)
