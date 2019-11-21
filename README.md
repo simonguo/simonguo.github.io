@@ -5,17 +5,9 @@ Front End Developer & Leader at [HYPERS](https://www.hypers.com), Creator of [@r
 - Company: [HYPERS Inc.](https://hypers.com)
 - Email: simonguo.2009@gmail.com
 - Location: Shanghai, China
-- WeChat: simonet
 - [instagram](https://www.instagram.com/simonguo.2009/)
 - [掘金](https://juejin.im/user/57cbc380128fe1006973fad9)
-
-## Friendly links
-
-- [5KUN DESIGN](http://www.5kun.com/)
-- [水墨寒的博客](http://www.smohan.net/)
-- [老岩的布拉格](http://www.wduw.com/)
-- [By Ameato](http://byameato.sxl.cn/)
-- [HYPERS 前端团队博客](http://blog.hypers.io/)
+- [知乎](https://www.zhihu.com/people/simonet)
 
 <style>
   @import url('https://bootswatch.com/4/sketchy/bootstrap.min.css');
