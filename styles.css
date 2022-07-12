@@ -21,7 +21,7 @@ a:hover {
 }
 h1,
 h2 {
-  border-bottom: 1px solid #444 !important;
+  border-bottom: 1px dashed #444 !important;
 }
 
 h1 a {
@@ -38,5 +38,6 @@ h1:after {
   color: #fff;
   font-family: ZpixReviewLocal, ZpixReviewOnline, sans-serif !important;
   padding: 10px 0;
+  border: 1px dashed #444;
 }
 
