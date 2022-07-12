@@ -10,5 +10,5 @@ Front End Developer & Leader at [HYPERS](https://www.hypers.com), Creator of [@r
 - [知乎](https://www.zhihu.com/people/simonet)
 
 <style>
-  @import url('./styles.css');
+  @import url('./styles.css?v=20220712');
 </style>
