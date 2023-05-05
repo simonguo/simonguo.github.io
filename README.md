@@ -12,7 +12,7 @@ But enough about work! Outside of the office, you can find me daydreaming about 
 
 If you're skilled in big data, testing, web services, or even if you're just interested in joining our dynamic team, I'd love to hear from you! Feel free to reach out to me via email at simonguo.2009@gmail.com or connect with me on Zhihu at [simonet](https://www.zhihu.com/people/simonet). Let's make some magic happen! 🚀
 
-<img align="center" src="https://raw.githubusercontent.com/simonguo/simonguo.github.io/output/github-contribution-grid-snake-dark.svg">
+<img align="center" style="background: none;" src="https://raw.githubusercontent.com/simonguo/simonguo.github.io/output/github-contribution-grid-snake-dark.svg">
 
 <style>
   @import url('./styles.css?v=20220712.2');
