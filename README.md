@@ -17,3 +17,12 @@ If you're skilled in big data, testing, web services, or even if you're just int
 <style>
   @import url('./styles.css?v=20220712.2');
 </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6K563Z6ZXD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6K563Z6ZXD');
+</script>
