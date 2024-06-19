@@ -1,16 +1,24 @@
-## About Me 👨‍💻‍
+## 关于我 👨‍💻‍
 
-I'm Simon Guo! I'm a creator, and a passionate front-end engineer. Originally from China, I found my love for React and created [@rsuite](https://rsuitejs.com/) in the summer of 2016. Since then, I've worked on a plethora of web projects and have gained a wealth of experience.
+我叫郭小铭 (Simon Guo)，是一名前端工程师。目前任职于嗨普智能，担任产品研发的技术总监。
 
-## My Work 💻
+## 技术 🚀
 
-Currently, I'm the Technical Director of HYPERS - a company that's all about providing intelligent marketing solutions for businesses. As a product development and management expert, I lead our team in developing a range of products, including [HYPERS OMNI-CHANNEL ANALYTICS](https://www.hypers.com/en/product/channel/), 
-[HYPERS ADVERTISING ANALYTICS](https://www.hypers.com/en/product/adserving/), 
-[HYPERS CONSENT MANAGER](https://www.hypers.com/en/product/consentmanager/), [HYPERS AUDIENCE CENTER](https://www.hypers.com/en/product/audiencecenter/), [HYPERS AD SERVING](https://www.hypers.com/en/product/adserving/), and [HYPERS CAMPAIGN STUDIO](https://www.hypers.com/en/product/campaignstudio/)
+- **React Suite 作者**, 在 React 技术栈上有丰富的开发经验，并开发了一套企业级的组件库 [React Suite](https://rsuitejs.com/)，欢迎 Star 和使用。
+- **Web Analytics 技术专家**, 开发过多端统一的数据采集 SDK 及数据分析平台，申请过多项技术专利。
+- **常用技术**, TypeScript、React、Next.js、Node.js、Taro。
+- **学习中**, Python、Rust。
 
-But enough about work! Outside of the office, you can find me daydreaming about my next DIY project, exploring the great outdoors, or indulging in my love for spicy food.
+## 管理 🚂
 
-If you're skilled in big data, testing, web services, or even if you're just interested in joining our dynamic team, I'd love to hear from you! Feel free to reach out to me via email at simonguo.2009@gmail.com or connect with me on Zhihu at [simonet](https://www.zhihu.com/people/simonet). Let's make some magic happen! 🚀
+- **前端经理（6 年）**, 在创业团队中从 0 搭建前端团队，制定技术规范与开发流程，建立前端基础设施，制定前端技术发展规划和人才培养计划。带领团队完成了多个项目的开发，包括数据分析平台、数据采集 SDK、企业级组件库等。最多时带领团队 20+ 人，包括 Web 前端、移动端及 BI 可视化。
+- **产品研发技术总监 (2 年+)**，负责产品研发团队的团队建设、技术规划选型、开发资源管理、项目进度管理、技术难点攻关等工作。最多时带领团队 100+ 人，包括前端、后端、测试、计算端等。
+
+## 联系我 📧
+
+- 邮箱：simonguo.2009@gmail.com
+- 微信：simonet
+- [GitHub](https://github.com/simonguo) 欢迎 Follow 我
 
 <img align="center" style="background: none;" src="https://raw.githubusercontent.com/simonguo/simonguo.github.io/output/github-contribution-grid-snake-dark.svg">
 
