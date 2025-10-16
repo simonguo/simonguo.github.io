@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Github, Mail, MessageCircle, ArrowUpRight } from "lucide-react";
+import DotMatrixAvatar from "./components/DotMatrixAvatar";
 
 export default function Home() {
   return (
@@ -13,11 +14,22 @@ export default function Home() {
         className="max-w-2xl"
       >
         <div className="space-y-8">
+          {/* Avatar Section */}
+          <div className="flex justify-center mb-8">
+            <DotMatrixAvatar
+              src="https://avatars.githubusercontent.com/u/1203827?v=4"
+              size={200}
+              dotSize={2.5}
+              dotSpacing={5}
+              className="mb-4"
+            />
+          </div>
+
           <div>
-            <h1 className="handwritten text-5xl md:text-6xl text-zinc-100 mb-6">
-              Hi! I'm Simon Guo.
+            <h1 className="handwritten text-5xl md:text-6xl text-zinc-100 mb-6 text-center">
+              Hi! I'm Simon Guo
             </h1>
-            <div className="space-y-4 text-lg text-zinc-400 leading-relaxed">
+            <div className="space-y-4 text-lg text-zinc-400 leading-relaxed text-center">
               <p>
                 I'm a frontend engineer and engineering director. I'm the author
                 of{" "}
@@ -35,7 +47,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-4 pt-4">
+          <div className="flex flex-wrap gap-4 pt-4 lg:justify-center">
             <a
               href="https://github.com/simonguo"
               target="_blank"
