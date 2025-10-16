@@ -15,6 +15,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link
+          rel="preload"
+          href="/fonts/zpix.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-6K563Z6ZXD"
