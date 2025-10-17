@@ -18,9 +18,9 @@ export default function Home() {
           <div className="flex justify-center mb-8">
             <DotMatrixAvatar
               src="https://avatars.githubusercontent.com/u/1203827?v=4"
-              size={200}
+              size={240}
               dotSize={2.5}
-              dotSpacing={5}
+              dotSpacing={4}
               className="mb-4"
             />
           </div>
