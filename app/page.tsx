@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Mail, MessageCircle, ArrowUpRight } from "lucide-react";
-import DotMatrixAvatar from "./components/DotMatrixAvatar";
+import { Github, Mail, MessageCircle, ArrowUpRight, FolderOpen } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -14,22 +14,11 @@ export default function Home() {
         className="max-w-2xl"
       >
         <div className="space-y-8">
-          {/* Avatar Section */}
-          <div className="flex justify-center mb-8">
-            <DotMatrixAvatar
-              src="https://avatars.githubusercontent.com/u/1203827?v=4"
-              size={240}
-              dotSize={2.5}
-              dotSpacing={4}
-              className="mb-4"
-            />
-          </div>
-
           <div>
-            <h1 className="handwritten text-5xl md:text-6xl text-zinc-100 mb-6 text-center">
+            <h1 className="handwritten text-5xl md:text-6xl text-zinc-100 mb-6">
               Hi! I'm Simon Guo
             </h1>
-            <div className="space-y-4 text-lg text-zinc-400 leading-relaxed text-center">
+            <div className="space-y-4 text-lg text-zinc-400 leading-relaxed">
               <p>
                 I'm a frontend engineer and engineering director. I'm the author
                 of{" "}
@@ -47,7 +36,14 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-4 pt-4 lg:justify-center">
+          <div className="flex flex-wrap gap-4 pt-4 justify-start">
+            <Link
+              href="/projects"
+              className="sketch-btn flex items-center gap-2 hover:shadow-lg transition-all"
+            >
+              <FolderOpen className="w-4 h-4" />
+              Projects
+            </Link>
             <a
               href="https://github.com/simonguo"
               target="_blank"
