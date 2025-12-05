@@ -1,36 +1,127 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Chrome, Code, ArrowUpRight, ArrowLeft, Package } from "lucide-react";
+import { Chrome, Code, ArrowUpRight, ArrowLeft, Package, Copy, Check } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Projects() {
-  const [activeMiniProgram, setActiveMiniProgram] = useState<string | null>(
-    null
-  );
+type MiniProgram = {
+  id: "xiaojigungun" | "laohuangli" | "shichunse" | "houlangcidian";
+  name: string;
+  src: string;
+  description?: string;
+  codeText?: string;
+};
 
-  const getMiniProgramMeta = (id: string) => {
-    switch (id) {
-      case "xiaojigungun":
-        return {
-          name: "小鸡滚滚",
-          src: "/images/gh_607067a94d5f_430.jpg",
-        };
-      case "shichunse":
-        return {
-          name: "试唇色",
-          src: "/images/gh_548a3fb41a72_430.jpg",
-        };
-      case "laohuangli":
-        return {
-          name: "老黄历",
-          src: "/images/gh_4a2e4882a5b2_430.jpg",
-        };
-      default:
-        return null;
-    }
+const MINI_PROGRAMS: MiniProgram[] = [
+  {
+    id: "xiaojigungun",
+    name: "小鸡滚滚",
+    src: "/images/gh_607067a94d5f_430.jpg",
+    codeText: "#小程序://小鸡滚滚/RwexQh8NBwWhCaI",
+  },
+  {
+    id: "laohuangli",
+    name: "老黄历",
+    src: "/images/gh_4a2e4882a5b2_430.jpg",
+    codeText: "#小程序://老黄历/35B5dLQIuMbBuhC",
+  },
+  {
+    id: "shichunse",
+    name: "试唇色",
+    src: "/images/gh_548a3fb41a72_430.jpg",
+    codeText: "#小程序://试唇色/1Le2cK3ydwTMiOz",
+  },
+  {
+    id: "houlangcidian",
+    name: "后浪词典",
+    src: "/images/gh_0a334bbf7562_430.jpg",
+    codeText: "#小程序://后浪词典/b2BUbr03IHjfJ7n",
+  },
+];
+
+type BrowserExtension = {
+  name: string;
+  url: string;
+  description?: string;
+};
+
+const BROWSER_EXTENSIONS: BrowserExtension[] = [
+  {
+    name: "AI Bookmark Manager",
+    url: "https://chromewebstore.google.com/detail/ai-bookmark-manager/bmokenmdljklglghnlnecfcpfibjippk",
+  },
+  {
+    name: "JSON-LD Checker",
+    url: "https://chromewebstore.google.com/detail/json-ld-checker/jdddgiebgdijpopfapkocdnnbgkhddln",
+  },
+  {
+    name: "Markdown Resume Builder",
+    url: "https://chromewebstore.google.com/detail/markdown-resume-builder/hbckologhhbopiofgkjgbklmfcacbffc",
+  },
+  {
+    name: "llms.txt Generator",
+    url: "https://chromewebstore.google.com/detail/llmstxt-generator/kjcbkalpklkhfhkoieancjgaidnfljnp",
+  },
+  {
+    name: "Website Color Palette Extractor",
+    url: "https://chromewebstore.google.com/detail/website-color-palette-ext/dbopblnhhgnompongppkekhpafmlakjn",
+  },
+];
+
+type MiniProgramCopyButtonProps = {
+  codeText: string;
+};
+
+function MiniProgramCopyButton({ codeText }: MiniProgramCopyButtonProps) {
+  const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    if (!copied) return;
+    const timer = setTimeout(() => setCopied(false), 2000);
+    return () => clearTimeout(timer);
+  }, [copied]);
+
+  const handleCopy = () => {
+    void navigator.clipboard.writeText(codeText);
+    setCopied(true);
+  };
+
+  return (
+    <span
+      role="button"
+      tabIndex={0}
+      onClick={(event) => {
+        event.stopPropagation();
+        handleCopy();
+      }}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          event.stopPropagation();
+          handleCopy();
+        }
+      }}
+      className="shrink-0 text-zinc-500 hover:text-zinc-200 transition-colors cursor-pointer inline-flex items-center justify-center"
+      aria-label={copied ? "Copied" : "Copy mini program code"}
+   >
+      {copied ? (
+        <Check className="w-3.5 h-3.5" />
+      ) : (
+        <Copy className="w-3.5 h-3.5" />
+      )}
+    </span>
+  );
+}
+
+export default function Projects() {
+  const [activeMiniProgram, setActiveMiniProgram] = useState<
+    (typeof MINI_PROGRAMS)[number]["id"] | null
+  >(null);
+
+  const getMiniProgramMeta = (id: (typeof MINI_PROGRAMS)[number]["id"]) => {
+    return MINI_PROGRAMS.find((item) => item.id === id) ?? null;
   };
 
   const handleCloseMiniProgram = () => setActiveMiniProgram(null);
@@ -59,14 +150,15 @@ export default function Projects() {
               My Projects
             </h1>
             <p className="text-lg text-zinc-400">
-              A collection of open source projects, including UI frameworks,
-              browser extensions, and developer tools.
+              A collection of open source work and personal projects, including
+              UI frameworks, browser extensions, VS Code extensions, and WeChat
+              mini programs.
             </p>
           </div>
 
           {/* UI Framework Section */}
           <div className="space-y-6">
-            <h2 className="text-2xl font-semibold text-zinc-100 flex items-center gap-2">
+            <h2 className="text-2xl font-medium text-zinc-100 flex items-center gap-2">
               <Package className="w-6 h-6" />
               UI Framework
             </h2>
@@ -78,7 +170,7 @@ export default function Projects() {
                 className="sketch-btn flex items-center justify-between gap-2 hover:shadow-lg transition-all group p-6"
               >
                 <div className="flex flex-col gap-1">
-                  <span className="text-lg font-semibold">React Suite</span>
+                  <span className="text-lg font-medium">React Suite</span>
                   <span className="text-sm text-zinc-400">
                     Enterprise-level UI component library for React
                   </span>
@@ -90,96 +182,63 @@ export default function Projects() {
 
           {/* Browser Extensions Section */}
           <div className="space-y-6">
-            <h2 className="text-2xl font-semibold text-zinc-100 flex items-center gap-2">
+            <h2 className="text-2xl font-medium text-zinc-100 flex items-center gap-2">
               <Chrome className="w-6 h-6" />
               Browser Extensions
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              <a
-                href="https://chromewebstore.google.com/detail/ai-bookmark-manager/bmokenmdljklglghnlnecfcpfibjippk"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="sketch-btn flex items-center justify-between gap-2 hover:shadow-lg transition-all group"
-              >
-                <span>AI Bookmark Manager</span>
-                <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </a>
-              <a
-                href="https://chromewebstore.google.com/detail/json-ld-checker/jdddgiebgdijpopfapkocdnnbgkhddln"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="sketch-btn flex items-center justify-between gap-2 hover:shadow-lg transition-all group"
-              >
-                <span>JSON-LD Checker</span>
-                <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </a>
-              <a
-                href="https://chromewebstore.google.com/detail/markdown-resume-builder/hbckologhhbopiofgkjgbklmfcacbffc"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="sketch-btn flex items-center justify-between gap-2 hover:shadow-lg transition-all group"
-              >
-                <span>Markdown Resume Builder</span>
-                <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </a>
-              <a
-                href="https://chromewebstore.google.com/detail/llmstxt-generator/kjcbkalpklkhfhkoieancjgaidnfljnp"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="sketch-btn flex items-center justify-between gap-2 hover:shadow-lg transition-all group"
-              >
-                <span>llms.txt Generator</span>
-                <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </a>
+              {BROWSER_EXTENSIONS.map((extension) => (
+                <a
+                  key={extension.name}
+                  href={extension.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="sketch-btn flex items-center justify-between gap-2 hover:shadow-lg transition-all group"
+                >
+                  <span>{extension.name}</span>
+                  <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+              ))}
             </div>
           </div>
 
           {/* WeChat Mini Programs Section */}
           <div className="space-y-6">
-            <h2 className="text-2xl font-semibold text-zinc-100 flex items-center gap-2">
+            <h2 className="text-2xl font-medium text-zinc-100 flex items-center gap-2">
               WeChat Mini Programs
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              <button
-                type="button"
-                onClick={() => setActiveMiniProgram("xiaojigungun")}
-                className="sketch-btn flex flex-col items-start gap-2 hover:shadow-lg transition-all p-4 text-left"
-              >
-                <div className="text-base font-semibold text-zinc-100">
-                  小鸡滚滚
-                </div>
-                <div className="text-sm text-zinc-400">点击查看小程序码</div>
-              </button>
-              <button
-                type="button"
-                onClick={() => setActiveMiniProgram("laohuangli")}
-                className="sketch-btn flex flex-col items-start gap-2 hover:shadow-lg transition-all p-4 text-left"
-              >
-                <div className="text-base font-semibold text-zinc-100">
-                  老黄历
-                </div>
-                <div className="text-sm text-zinc-400 break-all">
-                  #小程序://老黄历/35B5dLQIuMbBuhC
-                </div>
-              </button>
-              <button
-                type="button"
-                onClick={() => setActiveMiniProgram("shichunse")}
-                className="sketch-btn flex flex-col items-start gap-2 hover:shadow-lg transition-all p-4 text-left"
-              >
-                <div className="text-base font-semibold text-zinc-100">
-                  试唇色
-                </div>
-                <div className="text-sm text-zinc-400 break-all">
-                  #小程序://试唇色/1Le2cK3ydwTMiOz
-                </div>
-              </button>
+              {MINI_PROGRAMS.map((item: (typeof MINI_PROGRAMS)[number]) => (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => setActiveMiniProgram(item.id)}
+                  className="sketch-btn flex flex-col items-start gap-2 hover:shadow-lg transition-all p-4 text-left"
+                >
+                  <div className="text-base font-medium text-zinc-100">
+                    {item.name}
+                  </div>
+                  {item.description && (
+                    <div className="text-sm text-zinc-400">
+                      {item.description}
+                    </div>
+                  )}
+                  {item.codeText && (
+                    <div className="text-sm text-zinc-400 break-all flex items-center justify-between gap-2 w-full">
+                      <span className="truncate" title={item.codeText}>
+                        {item.codeText}
+                      </span>
+                      {item.codeText && <MiniProgramCopyButton codeText={item.codeText} />}
+                    </div>
+                  )}
+                </button>
+              ))}
             </div>
           </div>
 
           {/* VS Code Extensions Section */}
           <div className="space-y-6">
-            <h2 className="text-2xl font-semibold text-zinc-100 flex items-center gap-2">
+            <h2 className="text-2xl font-medium text-zinc-100 flex items-center gap-2">
               <Code className="w-6 h-6" />
               VS Code Extensions
             </h2>
@@ -216,7 +275,7 @@ export default function Projects() {
                 </button>
                 <div className="space-y-4">
                   <div>
-                    <h3 className="text-lg font-semibold text-zinc-100 mb-1">
+                    <h3 className="text-lg font-medium text-zinc-100 mb-1">
                       {meta.name}
                     </h3>
                     <p className="text-sm text-zinc-400">微信扫码打开小程序</p>
