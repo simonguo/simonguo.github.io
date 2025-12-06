@@ -2,7 +2,15 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Chrome, Code, ArrowUpRight, ArrowLeft, Package, Copy, Check } from "lucide-react";
+import {
+  Chrome,
+  Code,
+  ArrowUpRight,
+  ArrowLeft,
+  Package,
+  Copy,
+  Check,
+} from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -68,6 +76,10 @@ const BROWSER_EXTENSIONS: BrowserExtension[] = [
     name: "Website Color Palette Extractor",
     url: "https://chromewebstore.google.com/detail/website-color-palette-ext/dbopblnhhgnompongppkekhpafmlakjn",
   },
+  {
+    name: "WriteRight AI",
+    url: "https://chromewebstore.google.com/detail/writeright-ai/ojnifnkeeeniiapacnaihbbonholjapo",
+  },
 ];
 
 type MiniProgramCopyButtonProps = {
@@ -105,7 +117,7 @@ function MiniProgramCopyButton({ codeText }: MiniProgramCopyButtonProps) {
       }}
       className="shrink-0 text-zinc-500 hover:text-zinc-200 transition-colors cursor-pointer inline-flex items-center justify-center"
       aria-label={copied ? "Copied" : "Copy mini program code"}
-   >
+    >
       {copied ? (
         <Check className="w-3.5 h-3.5" />
       ) : (
@@ -228,7 +240,9 @@ export default function Projects() {
                       <span className="truncate" title={item.codeText}>
                         {item.codeText}
                       </span>
-                      {item.codeText && <MiniProgramCopyButton codeText={item.codeText} />}
+                      {item.codeText && (
+                        <MiniProgramCopyButton codeText={item.codeText} />
+                      )}
                     </div>
                   )}
                 </button>
