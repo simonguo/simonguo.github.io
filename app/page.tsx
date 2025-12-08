@@ -5,8 +5,24 @@ import { Github, Mail, MessageCircle, ArrowUpRight, FolderOpen } from "lucide-re
 import Link from "next/link";
 
 export default function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Simon Guo",
+    jobTitle: ["Frontend Engineer", "Engineering Director"],
+    url: "https://simonguo.github.io",
+    sameAs: ["https://github.com/simonguo", "https://rsuitejs.com/"],
+    description:
+      "I'm a frontend engineer and engineering director. Author of React Suite.",
+    email: "simonguo.2009@gmail.com",
+  };
+
   return (
     <main className="min-h-screen flex items-center justify-center p-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

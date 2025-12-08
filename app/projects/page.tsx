@@ -138,8 +138,66 @@ export default function Projects() {
 
   const handleCloseMiniProgram = () => setActiveMiniProgram(null);
 
+  const allProjects = [
+    {
+      name: "React Suite",
+      description: "Enterprise-level UI component library for React",
+      url: "https://rsuitejs.com/",
+      category: "UI Framework",
+      os: "Web",
+    },
+    ...BROWSER_EXTENSIONS.map((ext) => ({
+      name: ext.name,
+      description: ext.description,
+      url: ext.url,
+      category: "Browser Extension",
+      os: "Chrome, Edge, Brave",
+    })),
+    ...MINI_PROGRAMS.map((mp) => ({
+      name: mp.name,
+      description: mp.description,
+      url: undefined,
+      category: "WeChat Mini Program",
+      os: "WeChat",
+    })),
+    {
+      name: "Markdown Table Sort",
+      description: "Sort markdown tables in VS Code",
+      url: "https://marketplace.visualstudio.com/items?itemName=simonguo.vscode-markdown-table-sort",
+      category: "VS Code Extension",
+      os: "VS Code",
+    },
+  ];
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Projects by Simon Guo",
+    description:
+      "A collection of open source work and personal projects, including UI frameworks, browser extensions, VS Code extensions, and WeChat mini programs.",
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: allProjects.map((project, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "SoftwareApplication",
+          name: project.name,
+          description: project.description,
+          url: project.url,
+          applicationCategory: project.category,
+          operatingSystem: project.os,
+        },
+      })),
+    },
+  };
+
   return (
     <main className="min-h-screen flex items-center justify-center p-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
