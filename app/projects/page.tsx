@@ -15,7 +15,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 type MiniProgram = {
-  id: "xiaojigungun" | "laohuangli" | "shichunse" | "houlangcidian";
+  id: "xiaojigungun" | "laohuangli" | "shichunse" | "houlangcidian" | "chapeiliao";
   name: string;
   src: string;
   description?: string;
@@ -46,6 +46,12 @@ const MINI_PROGRAMS: MiniProgram[] = [
     name: "后浪词典",
     src: "/images/gh_0a334bbf7562_430.jpg",
     codeText: "#小程序://后浪词典/b2BUbr03IHjfJ7n",
+  },
+  {
+    id: "chapeiliao",
+    name: "查配料",
+    src: "/images/gh_3b1024dab28d_430.jpg",
+    codeText: "#小程序://查配料/4jY79IrV5jXQD8c",
   },
 ];
 
@@ -79,6 +85,10 @@ const BROWSER_EXTENSIONS: BrowserExtension[] = [
   {
     name: "WriteRight AI",
     url: "https://chromewebstore.google.com/detail/writeright-ai/ojnifnkeeeniiapacnaihbbonholjapo",
+  },
+  {
+    name: "图片视频下载助手",
+    url: "https://chromewebstore.google.com/detail/%E5%9B%BE%E7%89%87%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%8A%A9%E6%89%8B/hdgkcdjcjffekcikabmknnfjaombiefm",
   },
 ];
 
