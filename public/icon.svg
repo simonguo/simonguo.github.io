@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" shape-rendering="crispEdges">
+  <rect width="16" height="16" fill="#0a0a0a" rx="4" />
+  <!-- Face -->
+  <rect x="3" y="3" width="10" height="10" fill="#818cf8" />
+  <!-- Eyes -->
+  <rect x="5" y="6" width="2" height="2" fill="#0a0a0a" />
+  <rect x="9" y="6" width="2" height="2" fill="#0a0a0a" />
+  <!-- Mouth -->
+  <path d="M5 10h6v1H5z M4 9h1v1H4z M11 9h1v1h-1z" fill="#0a0a0a" />
+</svg>

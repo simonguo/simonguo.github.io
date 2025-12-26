@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: 'Simon Guo',
   description: 'Frontend engineer and engineering director. Author of React Suite.',
   keywords: ['Simon Guo', 'React Suite', 'Frontend Engineer', 'TypeScript', 'React'],
+  icons: {
+    icon: '/icon.svg',
+  },
 }
 
 export default function RootLayout({
