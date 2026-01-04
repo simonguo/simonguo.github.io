@@ -15,7 +15,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 type MiniProgram = {
-  id: "xiaojigungun" | "laohuangli" | "shichunse" | "houlangcidian" | "chapeiliao";
+  id: string;
   name: string;
   src: string;
   description?: string;
@@ -24,10 +24,10 @@ type MiniProgram = {
 
 const MINI_PROGRAMS: MiniProgram[] = [
   {
-    id: "xiaojigungun",
-    name: "小鸡滚滚",
-    src: "/images/gh_607067a94d5f_430.jpg",
-    codeText: "#小程序://小鸡滚滚/RwexQh8NBwWhCaI",
+    id: "chapeiliao",
+    name: "查配料",
+    src: "/images/gh_3b1024dab28d_430.jpg",
+    codeText: "#小程序://查配料/4jY79IrV5jXQD8c",
   },
   {
     id: "laohuangli",
@@ -48,10 +48,10 @@ const MINI_PROGRAMS: MiniProgram[] = [
     codeText: "#小程序://后浪词典/b2BUbr03IHjfJ7n",
   },
   {
-    id: "chapeiliao",
-    name: "查配料",
-    src: "/images/gh_3b1024dab28d_430.jpg",
-    codeText: "#小程序://查配料/4jY79IrV5jXQD8c",
+    id: "xiaojigungun",
+    name: "小鸡滚滚",
+    src: "/images/gh_607067a94d5f_430.jpg",
+    codeText: "#小程序://小鸡滚滚/RwexQh8NBwWhCaI",
   },
 ];
 
@@ -63,12 +63,16 @@ type BrowserExtension = {
 
 const BROWSER_EXTENSIONS: BrowserExtension[] = [
   {
-    name: "AI Bookmark Manager",
-    url: "https://chromewebstore.google.com/detail/ai-bookmark-manager/bmokenmdljklglghnlnecfcpfibjippk",
+    name: "AI SEO Analyzer",
+    url: "https://chromewebstore.google.com/detail/ai-seo-analyzer/mkllojoidmbbhmjlpjabpfhklgancdnj",
   },
   {
     name: "JSON-LD Checker",
     url: "https://chromewebstore.google.com/detail/json-ld-checker/jdddgiebgdijpopfapkocdnnbgkhddln",
+  },
+  {
+    name: "AI Bookmark Manager",
+    url: "https://chromewebstore.google.com/detail/ai-bookmark-manager/bmokenmdljklglghnlnecfcpfibjippk",
   },
   {
     name: "Markdown Resume Builder",
