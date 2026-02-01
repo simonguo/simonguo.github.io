@@ -63,6 +63,10 @@ type BrowserExtension = {
 
 const BROWSER_EXTENSIONS: BrowserExtension[] = [
   {
+    name: "小红书 VOC 情感分析",
+    url: "https://chromewebstore.google.com/detail/%E5%B0%8F%E7%BA%A2%E4%B9%A6-voc-%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90/epmmcmmgmflokmpndeamenffhhhbokkl",
+  },
+  {
     name: "AI SEO Analyzer",
     url: "https://chromewebstore.google.com/detail/ai-seo-analyzer/mkllojoidmbbhmjlpjabpfhklgancdnj",
   },
